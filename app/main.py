@@ -24,7 +24,10 @@ def index():
 # Render Login
 @app.route("/login")
 def login():
-    return render_template('login.html', login_form = LoginForm())
+    if "status" in session:
+        return redirect("http://blackiq-neotrinost.fandogh.cloud/panel")
+    else:
+        return render_template('login.html', login_form = LoginForm())
 
 # Check Login
 @app.route("/submit/", methods = ['POST'])
@@ -35,15 +38,19 @@ def submit():
         password = form.password.data
 
         if username == "Amirhossein" and password == "2003":
-            return rander_template("panel.html")
+            session['status'] = True
+            return redirect("http://blackiq-neotrinost.fandogh.cloud/panel")
         else:
             return render_template("error.html", context = ['User Error', 'Sorry, Username or Password is incorrect'])
 
 # Logout
 @app.route("/logout")
 def logout():
-    session.pop('status', None)
-    return render_template("login.html")
+    if "status" in session:
+        session.pop('status', None)
+        return render_template("login.html")
+    else:
+        return redirect("http://blackiq-neotrinost.fandogh.cloud/panel")
 
 # 404 Page Not Found
 @app.errorhandler(404)
