@@ -9,18 +9,18 @@
         <br>
         <form action="{{ url_for('submit') }}" method="POST">
             {{ login_form.hidden_tag() }}
+            <div>
                 <label for="code">Username</label>
+                <br><br>
                 {{ login_form.username() }}
-                <br>
+            </div>
+            <br>
+            <div>
                 <label for="password">Password</label>
+                <br><br>
                 {{ login_form.password() }}
-                <br>
-                <input class="form-check-input" name="remember" type="checkbox" id="remember">
-                <label for="remember">
-                    Remember Me
-                </label>
-                <br>
-                <br>
+            </div>
+            <br><br><br>
             <button name="login" id="login" type="submit">Login</button>
         </form>
     </div>
