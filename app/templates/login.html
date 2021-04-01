@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <h1>Login</h1>
+        <br>
+        <form action="{{ url_for('submit') }}" method="POST">
+            {{ login_form.hidden_tag() }}
+                <label for="code">Username</label>
+                {{ login_form.username() }}
+                <br>
+                <label for="password">Password</label>
+                {{ login_form.password() }}
+                <br>
+                <input class="form-check-input" name="remember" type="checkbox" id="remember">
+                <label for="remember">
+                    Remember Me
+                </label>
+                <br>
+                <br>
+            <button name="login" id="login" type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
