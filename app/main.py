@@ -1,26 +1,32 @@
+# Flask Library
 from flask import Flask, render_template, request, session, redirect
 
+# Flask Form Library
 from flask_wtf import FlaskForm
 from flask_wtf.recaptcha import validators
 from wtforms import TextField, PasswordField
 from wtforms.validators import DataRequired
 
+# Flask Form -> Login
 class LoginForm(FlaskForm):
     username = TextField(validators = [DataRequired()])
     password = PasswordField(validators = [DataRequired()])
 
-
+# App Configuration
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "1234"
 
+# Route Index
 @app.route("/")
 def index():
     return render_template("index.html")
 
+# Render Login
 @app.route("/login")
 def login():
     return render_template('login.html', login_form = LoginForm())
 
+# Check Login
 @app.route("/submit/", methods = ['POST'])
 def submit():
     form = LoginForm(request.form)
@@ -33,6 +39,7 @@ def submit():
         else:
             return render_template("error.html", context = ['User Error', 'Sorry, Username or Password is incorrect'])
 
+# Logout
 @app.route("/logout")
 def logout():
     session.pop('status', None)
@@ -68,5 +75,6 @@ def other_server(error):
 def crash_server(error):
     return render_template("error.html", context = ['503', '503 Service Error', 'Sorry, service is Unavailable'])
 
+# Running App
 if __name__ == "__main__":
     app.run()
