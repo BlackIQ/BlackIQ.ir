@@ -6,21 +6,20 @@
 <body>
     <div>
         <h1>Login</h1>
-        <br>
         <form action="{{ url_for('submit') }}" method="POST">
             {{ login_form.hidden_tag() }}
             <div>
                 <label for="code">Username</label>
-                <br><br>
+                <br>
                 {{ login_form.username() }}
             </div>
             <br>
             <div>
                 <label for="password">Password</label>
-                <br><br>
+                <br>
                 {{ login_form.password() }}
             </div>
-            <br><br><br>
+            <br><br>
             <button name="login" id="login" type="submit">Login</button>
         </form>
     </div>
