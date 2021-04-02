@@ -21,6 +21,13 @@ app.config['SECRET_KEY'] = "1234"
 def index():
     return render_template("index.html")
 
+@app.route("/panel")
+def panel():
+    if "status" in session:
+        return render_template("panel.html")
+    else:
+        return redirect("http://blackiq-neotrinost.fandogh.cloud")
+
 # Render Login
 @app.route("/login")
 def login():
@@ -50,7 +57,7 @@ def logout():
         session.pop('status', None)
         return render_template("login.html")
     else:
-        return redirect("http://blackiq-neotrinost.fandogh.cloud/panel")
+        return render_template("error.html", context = ['Your are logedin ?', 'Sorry, You are not logedin to logout right now'])
 
 # 404 Page Not Found
 @app.errorhandler(404)
