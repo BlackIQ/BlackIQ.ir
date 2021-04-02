@@ -21,6 +21,7 @@ app.config['SECRET_KEY'] = "1234"
 def index():
     return render_template("index.html")
 
+# Rendert Panel
 @app.route("/panel")
 def panel():
     if "status" in session:
