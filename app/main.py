@@ -55,7 +55,7 @@ def submit():
 def logout():
     if "status" in session:
         session.pop('status', None)
-        return render_template("login.html")
+        return redirect("http://blackiq-neotrinost.fandogh.cloud/login")
     else:
         return render_template("error.html", context = ['Your are logedin ?', 'Sorry, You are not logedin to logout right now'])
 
