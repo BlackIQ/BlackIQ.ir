@@ -7,6 +7,28 @@ from flask_wtf.recaptcha import validators
 from wtforms import TextField, PasswordField
 from wtforms.validators import DataRequired
 
+
+# MySQL
+import mysql.connector
+
+# MySQL -> Make Connection
+cnx = mysql.connector.connect(
+    host = "localhost",
+    user = "blackiq",
+    password = "blackiq",
+    database = "blackiq"
+)
+
+# MySQL -> Cursor
+cursor = cnx.cursor()
+
+# MySQL -> Select Data Of User
+cursor.execute("SELECT * FROM user")
+
+# MySQL -> Loop in cursot
+for (username, password) in cursor:
+    dbusername, dbpassword = username, password
+
 # Flask Form -> Login
 class LoginForm(FlaskForm):
     username = TextField(validators = [DataRequired()])
@@ -21,19 +43,25 @@ app.config['SECRET_KEY'] = "1234"
 def index():
     return render_template("index.html")
 
+# MySQL -> Select Data For Jobs
+cursor.execute("SELECT * FROM jobs ORDER BY id DESC")
+
+# MySQL -> Fetch All
+rows = cursor.fetchall()
+
 # Rendert Panel
 @app.route("/panel")
 def panel():
     if "status" in session:
-        return render_template("panel.html")
+        return render_template("panel.html", context = rows)
     else:
-        return redirect("http://blackiq-neotrinost.fandogh.cloud")
+        return redirect("/")
 
 # Render Login
 @app.route("/login")
 def login():
     if "status" in session:
-        return redirect("http://blackiq-neotrinost.fandogh.cloud/panel")
+        return redirect("/panel")
     else:
         return render_template('login.html', login_form = LoginForm())
 
@@ -45,9 +73,9 @@ def submit():
         username = form.username.data
         password = form.password.data
 
-        if username == "Amirhossein" and password == "2003":
+        if username == dbusername and password == dbpassword:
             session['status'] = True
-            return redirect("http://blackiq-neotrinost.fandogh.cloud/panel")
+            return redirect("/panel")
         else:
             return render_template("error.html", context = ['User Error', 'Sorry, Username or Password is incorrect'])
 
@@ -56,7 +84,7 @@ def submit():
 def logout():
     if "status" in session:
         session.pop('status', None)
-        return redirect("http://blackiq-neotrinost.fandogh.cloud/login")
+        return redirect("/login")
     else:
         return render_template("error.html", context = ['Your are logedin ?', 'Sorry, You are not logedin to logout right now'])
 
