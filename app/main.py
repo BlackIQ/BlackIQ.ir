@@ -7,28 +7,6 @@ from flask_wtf.recaptcha import validators
 from wtforms import TextField, PasswordField
 from wtforms.validators import DataRequired
 
-
-# MySQL
-import mysql.connector
-
-# MySQL -> Make Connection
-# cnx = mysql.connector.connect( # On Working
-#     host = "localhost", # On Working
-#     user = "blackiq", # On Working
-#     password = "blackiq", # On Working
-#     database = "blackiq" # On Working
-# ) # On Working
-
-# MySQL -> Cursor
-# cursor = cnx.cursor() # On Working
-
-# MySQL -> Select Data Of User
-# cursor.execute("SELECT * FROM user") # On Working
-
-# MySQL -> Loop in cursot
-# for (username, password) in cursor: # On Working
-#     dbusername, dbpassword = username, password # On Working
-
 dbusername, dbpassword = "username", "password"
 
 # Flask Form -> Login
@@ -44,12 +22,6 @@ app.config['SECRET_KEY'] = "1234"
 @app.route("/")
 def index():
     return render_template("index.html")
-
-# MySQL -> Select Data For Jobs
-# cursor.execute("SELECT * FROM jobs ORDER BY id DESC") # On Working
-
-# MySQL -> Fetch All
-# rows = cursor.fetchall()  # On Working
 
 # Rendert Welcome
 @app.route("/welcome")
@@ -121,4 +93,4 @@ def crash_server(error):
 
 # Running App
 if __name__ == "__main__":
-    app.run("0.0.0.0", 5000)
+    app.run()
