@@ -49,14 +49,6 @@ cursor.execute("SELECT * FROM jobs ORDER BY id DESC")
 # MySQL -> Fetch All
 rows = cursor.fetchall()
 
-# Rendert Panel
-@app.route("/panel")
-def panel():
-    if "status" in session:
-        return render_template("panel.html", context = rows)
-    else:
-        return redirect("/")
-
 # Render Login
 @app.route("/login")
 def login():
