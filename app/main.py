@@ -53,9 +53,9 @@ def index():
 
 # Rendert Welcome
 @app.route("/welcome")
-def panel():
+def welcome():
     if "status" in session:
-        return render_template("welcome.html", context = rows)
+        return render_template("welcome.html")
     else:
         return redirect("/")
 
@@ -72,11 +72,10 @@ def login():
 def submit():
     form = LoginForm(request.form)
     if form.validate_on_submit():
-        username = form.username.data
-        password = form.password.data
 
-        if username == dbusername and password == dbpassword:
+        if form.username.data == dbusername and form.password.data == dbpassword:
             session['status'] = True
+            session['username'] = username
             return redirect("/welcome")
         else:
             return render_template("error.html", context = ['User Error', 'Sorry, Username or Password is incorrect'])
