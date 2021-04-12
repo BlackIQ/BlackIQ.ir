@@ -12,22 +12,24 @@ from wtforms.validators import DataRequired
 import mysql.connector
 
 # MySQL -> Make Connection
-cnx = mysql.connector.connect(
-    host = "localhost",
-    user = "blackiq",
-    password = "blackiq",
-    database = "blackiq"
-)
+# cnx = mysql.connector.connect( # On Working
+#     host = "localhost", # On Working
+#     user = "blackiq", # On Working
+#     password = "blackiq", # On Working
+#     database = "blackiq" # On Working
+# ) # On Working
 
 # MySQL -> Cursor
-cursor = cnx.cursor()
+# cursor = cnx.cursor() # On Working
 
 # MySQL -> Select Data Of User
-cursor.execute("SELECT * FROM user")
+# cursor.execute("SELECT * FROM user") # On Working
 
 # MySQL -> Loop in cursot
-for (username, password) in cursor:
-    dbusername, dbpassword = username, password
+# for (username, password) in cursor: # On Working
+#     dbusername, dbpassword = username, password # On Working
+
+dbusername, dbpassword = "username", "password"
 
 # Flask Form -> Login
 class LoginForm(FlaskForm):
@@ -44,16 +46,24 @@ def index():
     return render_template("index.html")
 
 # MySQL -> Select Data For Jobs
-cursor.execute("SELECT * FROM jobs ORDER BY id DESC")
+# cursor.execute("SELECT * FROM jobs ORDER BY id DESC") # On Working
 
 # MySQL -> Fetch All
-rows = cursor.fetchall()
+# rows = cursor.fetchall()  # On Working
+
+# Rendert Welcome
+@app.route("/welcome")
+def panel():
+    if "status" in session:
+        return render_template("welcome.html", context = rows)
+    else:
+        return redirect("/")
 
 # Render Login
 @app.route("/login")
 def login():
     if "status" in session:
-        return redirect("/panel")
+        return redirect("/welcome")
     else:
         return render_template('login.html', login_form = LoginForm())
 
@@ -67,7 +77,7 @@ def submit():
 
         if username == dbusername and password == dbpassword:
             session['status'] = True
-            return redirect("/panel")
+            return redirect("/welcome")
         else:
             return render_template("error.html", context = ['User Error', 'Sorry, Username or Password is incorrect'])
 
