@@ -63,7 +63,7 @@ def welcome():
 @app.route("/login")
 def login():
     if "status" in session:
-        return redirect("/welcome", context = session['username'])
+        return redirect("/welcome")
     else:
         return render_template('login.html', login_form = LoginForm())
 
@@ -121,4 +121,4 @@ def crash_server(error):
 
 # Running App
 if __name__ == "__main__":
-    app.run()
+    app.run("0.0.0.0", 5000)
