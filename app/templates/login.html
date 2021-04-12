@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <h1>Login</h1>
+        <form action="{{ url_for('submit') }}" method="POST">
+            {{ login_form.hidden_tag() }}
+            <div>
+                <label for="code">Username</label>
+                <br>
+                {{ login_form.username() }}
+            </div>
+            <br>
+            <div>
+                <label for="password">Password</label>
+                <br>
+                {{ login_form.password() }}
+            </div>
+            <br><br>
+            <button name="login" id="login" type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
