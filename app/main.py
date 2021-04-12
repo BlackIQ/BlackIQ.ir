@@ -63,7 +63,7 @@ def welcome():
 @app.route("/login")
 def login():
     if "status" in session:
-        return redirect("/welcome")
+        return redirect("/welcome", context = session['username'])
     else:
         return render_template('login.html', login_form = LoginForm())
 
@@ -75,7 +75,7 @@ def submit():
 
         if form.username.data == dbusername and form.password.data == dbpassword:
             session['status'] = True
-            session['username'] = username
+            session['username'] = form.username.data
             return redirect("/welcome")
         else:
             return render_template("error.html", context = ['User Error', 'Sorry, Username or Password is incorrect'])
