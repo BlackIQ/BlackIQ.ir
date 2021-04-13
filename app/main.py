@@ -1,9 +1,8 @@
 # Flask Library
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, render_template
 
 # App Configuration
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "1234"
 
 # Route Index
 @app.route("/")
