@@ -1,14 +1,8 @@
 # [BlackIQ.ir](https://BlackIQ.ir)
 
-### Site is on working
-
 ---
 
-Hey, This is my site source code that is not finished and have no css at all :|
-
-Anyway, This is Flask Based and you can run it and work on it.
-
-Nothing else guys.
+Hey, This is my site source code. Anyway, This is Flask Based and you can run it and work on it.
 
 Live long and prosper :)
 
@@ -16,4 +10,4 @@ Live long and prosper :)
 
 **[Amirhossein Mohammadi](https://linkedin.com/in/amirhosseinmohammadi), CEO & Founder of [Neotrinost](https://neotrinost.ir) Inc.**
 
-**[Neotrinost](https://neotrinost.ir) Inc. &copy; 2020 - 2021, All Rights Reserved**
+**&copy; 2020 - 2021, All Rights Reserved**
