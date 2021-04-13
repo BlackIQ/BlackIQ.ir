@@ -1,19 +1,6 @@
 # Flask Library
 from flask import Flask, render_template, request, session, redirect
 
-# Flask Form Library
-from flask_wtf import FlaskForm
-from flask_wtf.recaptcha import validators
-from wtforms import TextField, PasswordField
-from wtforms.validators import DataRequired
-
-dbusername, dbpassword = "username", "password"
-
-# Flask Form -> Login
-class LoginForm(FlaskForm):
-    username = TextField(validators = [DataRequired()])
-    password = PasswordField(validators = [DataRequired()])
-
 # App Configuration
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "1234"
@@ -22,44 +9,6 @@ app.config['SECRET_KEY'] = "1234"
 @app.route("/")
 def index():
     return render_template("index.html")
-
-# Rendert Welcome
-@app.route("/welcome")
-def welcome():
-    if "status" in session:
-        return render_template("welcome.html")
-    else:
-        return redirect("/")
-
-# Render Login
-@app.route("/login")
-def login():
-    if "status" in session:
-        return redirect("/welcome")
-    else:
-        return render_template('login.html', login_form = LoginForm())
-
-# Check Login
-@app.route("/submit/", methods = ['POST'])
-def submit():
-    form = LoginForm(request.form)
-    if form.validate_on_submit():
-
-        if form.username.data == dbusername and form.password.data == dbpassword:
-            session['status'] = True
-            session['username'] = form.username.data
-            return redirect("/welcome")
-        else:
-            return render_template("error.html", context = ['User Error', 'Sorry, Username or Password is incorrect'])
-
-# Logout
-@app.route("/logout")
-def logout():
-    if "status" in session:
-        session.pop('status', None)
-        return redirect("/login")
-    else:
-        return render_template("error.html", context = ['Your are logedin ?', 'Sorry, You are not logedin to logout right now'])
 
 # 404 Page Not Found
 @app.errorhandler(404)
