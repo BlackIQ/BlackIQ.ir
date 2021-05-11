@@ -41,4 +41,4 @@ def crash_server(error):
 
 # Running App
 if __name__ == "__main__":
-    app.run()
+    app.run("0.0.0.0", 5000)
