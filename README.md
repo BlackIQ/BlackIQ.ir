@@ -1,13 +1,19 @@
 # [BlackIQ.ir](https://BlackIQ.ir)
 
----
+**How this project is up?**
+- Well this is a **Python** based project. **Flask** I mean.
+- Ok, Where did I put **Flask** app? on **Fandoigh PasS**.
+- then, used **Cloudflare** to route traffics.
+- Next I bout a domain from **Iranserver** and put **Cloadflare** DNS there.
 
-Hey, This is my site source code. Anyway, This is Flask Based and you can run it and work on it.
+For more information, Contact me.
+- Telegram : @BlackIQ
+- Phone : +98 901 478 4362
 
 Live long and prosper :)
 
 ---
 
-**[Amirhossein Mohammadi](https://linkedin.com/in/amirhosseinmohammadi), CEO & Founder of [Neotrinost](https://neotrinost.ir) Inc.**
+**[Amirhossein Mohammadi](https://linkedin.com/in/amirhosseinmohammadi), CEO & Founder of [Neotrinost](https://neotrinost.ir) LLC.**
 
 **&copy; 2020 - 2021, All Rights Reserved**
