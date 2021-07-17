@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap');
+
 .main {
+	font-family: 'Hind', sans-serif;
 	padding-top: 4%;
 }
 .left {
@@ -6,4 +9,7 @@
 }
 .color {
 	color: purple;
+}
+.link {
+	color: red;
 }
