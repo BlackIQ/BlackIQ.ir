@@ -2,7 +2,7 @@
 
 .main {
 	font-family: 'Hind', sans-serif;
-	padding-top: 4%;
+	padding-top: 5%;
 }
 .left {
 	text-align: left;
@@ -11,5 +11,5 @@
 	color: purple;
 }
 .link {
-	color: red;
+	color: fuchsia;
 }
