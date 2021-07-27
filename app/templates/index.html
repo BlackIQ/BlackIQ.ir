@@ -22,34 +22,55 @@
     <link rel="stylesheet" href="static/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
     <style>
-			@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-			.main {
-				font-family: 'Poppins', sans-serif;
-				padding: 10%;
-			}
-			.left {
-				text-align: left;
-			}
-			.purple {
-				color: purple;
-			}
-			.blue {
-				color: blue;
-				text-decoration: none;
-			}
-			.red {
-			    color: red;
-			    text-decoration: none;
-			}
-			.purplehr {
-			    background: purple;
-			    border: 1px solid purple;
-			}
-			.redhr {
-			    background: red;
-			    border: 1px solid red;
-			}
+        .main {
+            font-family: 'Poppins', sans-serif;
+            padding: 10%;
+            color: black;
+            background: white;
+        }
+        .main.light-theme {
+            color: black;
+            background: white;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            /* defaults to dark theme */
+            .main {
+                font-family: 'Poppins', sans-serif;
+                padding: 10%;
+                color: white;
+                background: black;
+            }
+            .main.light-theme {
+                color: white;
+                background: black;
+            }
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        .left {
+            text-align: left;
+        }
+        .purple {
+            color: purple;
+        }
+        .blue {
+            color: blue;
+            text-decoration: none;
+        }
+        .red {
+            color: red;
+            text-decoration: none;
+        }
+        .purplehr {
+            background: purple;
+            border: 1px solid purple;
+        }
+        .redhr {
+            background: red;
+            border: 1px solid red;
+        }
     </style>
 </head>
 <body>
