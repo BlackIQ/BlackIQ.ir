@@ -2,3 +2,4 @@
 .fandogh
 app/__pycache__
 app/database.db
+venv
