@@ -23,82 +23,101 @@
     <script src="https://kit.fontawesome.com/4a679d8ec0.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-        .left {
-            text-align: left;
-        }
 
-        .toggle {
-            background: none;
-            border: none;
-            color: white;
-        }
-        .main {
+        .light .main {
             font-family: 'Poppins', sans-serif;
             padding: 10%;
             color: black;
             background: white;
         }
-        .purple {
+        .light .left {
+            text-align: left;
+        }
+        .light .purple {
             color: purple;
         }
-        .blue {
+        .light .blue {
             color: blue;
             text-decoration: none;
         }
-        .red {
+        .light .red {
             color: red;
             text-decoration: none;
         }
-        .purplehr {
+        .light .purplehr {
             background: purple;
             border: 1px solid purple;
         }
-        .redhr {
+        .light .redhr {
             background: red;
             border: 1px solid red;
         }
+        .light .toggle {
+            background: none;
+            border: none;
+            color: black;
+        }
+        .light .nlink {
+            color: black;
+            text-decoration: none;
+        }
+        .light .nlink:hover {
+            color: black;
+            text-decoration: none;
+        }
 
 
-        .dark, .main {
+        .dark .main {
             font-family: 'Poppins', sans-serif;
+            background: #313131;
             padding: 10%;
             color: white;
-            background: #313131;
         }
-        .dark, .purple {
+        .dark .left {
+            text-align: left;
+        }
+        .dark .purple {
             color: #bb86fc;
         }
-        .dark, .blue {
+        .dark .blue {
             color: #03dac5;
             text-decoration: none;
         }
-        .dark, .red {
-            color: red;
-            text-decoration: red;
+        .dark .red {
+            color: yellow;
+            text-decoration: yellow;
         }
-        .dark, .purplehr {
+        .dark .purplehr {
             background: purple;
             border: 1px solid purple;
         }
-        .dark, .redhr {
+        .dark .redhr {
             background: yellow;
             border: 1px solid yellow;
         }
         .dark .toggle {
             background: none;
             border: none;
-            color: yellow;
+            color: white;
+        }
+        .dark .nlink {
+            color: white;
+            text-decoration: none;
+        }
+        .dark .nlink:hover {
+            color: white;
+            text-decoration: none;
         }
 
     </style>
 </head>
-<body>
+<body class="dark" id="all">
 <div class="main">
     <div class="left">
         <div style="float: right;">
-            <button class="toggle">Refresh <i class="fa fa-refresh"></i></button>
+            <a class="nlink">Refresh <i class="fa fa-refresh"></i></a>
             <button class="toggle">Full screen <i class="fas fa-expand"></i></button>
-            <button onclick="toggle()" value="dark" class="toggle" id="mode">Toggle to <i class="fa fa-moon"></i> mode</button>
+            <button onclick="toggle()" value="dark" class="toggle" id="mode">Toggle to <i class="fa fa-sun"></i> mode</button>
         </div>
         <h2 class="purple">Hi, I am Amirhossein Mohammadi.</h2>
         <p>Simple PHP and Python developer.</p>
@@ -335,17 +354,18 @@
 </div>
 <script>
     function toggle() {
-        var element = document.body;
-        element.classList.toggle("dark");
-
         var btn = document.getElementById("mode");
         if (btn.value == "dark") {
+            document.getElementById("all").classList.remove('dark');
+            document.getElementById("all").classList.add('light');
             btn.value = "light";
-            btn.innerHTML = 'Toggle to <i class="fa fa-sun"></i> mode';
+            btn.innerHTML = 'Toggle to <i class="fa fa-moon"></i> mode';
         }
         else {
+            document.getElementById("all").classList.remove('light');
+            document.getElementById("all").classList.add('dark');
             btn.value = "dark";
-            btn.innerHTML = 'Toggle to <i class="fa fa-moon"></i> mode';
+            btn.innerHTML = 'Toggle to <i class="fa fa-sun"></i> mode';
         }
     }
 </script>
