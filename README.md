@@ -10,8 +10,7 @@ For more information, Contact me.
 - Telegram : @BlackIQ
 - Phone : +98 901 478 4362
 
-**Also in github.io too!**
-But again, using cloudflare!
+**Also this project hosted in github.io too!**
 
 Live long and prosper :)
 
