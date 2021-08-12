@@ -6,6 +6,11 @@
 - then, used **Cloudflare** to route traffics.
 - Next I bout a domain from **Iranserver** and put **Cloadflare** DNS there.
 
+There is persion version too.
+
+- [Site](https://fa.blackiq.ir)
+- [Repository](https://github.com/BlackIQ/fa.blackiq.ir)
+
 For more information, Contact me.
 - Telegram : @BlackIQ
 - Phone : +98 901 478 4362
