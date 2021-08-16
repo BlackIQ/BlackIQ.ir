@@ -17,6 +17,8 @@ For more information, Contact me.
 
 **Also this project hosted in github.io too!**
 
+**Pull requesrs are all open!**
+
 Live long and prosper :)
 
 ---
