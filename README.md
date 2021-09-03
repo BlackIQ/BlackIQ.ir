@@ -1,3 +1,5 @@
+[![Github Profile Views](https://komarev.com/ghpvc/?username=BlackIQ&style=flat-square&color=lightgrey)](.)
+
 # [BlackIQ.ir](https://BlackIQ.ir)
 
 **How this project is up?**
