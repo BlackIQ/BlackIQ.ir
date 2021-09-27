@@ -1,4 +1,4 @@
-<!-- [![Github Profile Views](https://komarev.com/ghpvc/?username=BlackIQ&style=flat-square&color=lightgrey)](.) -->
+[![Github Profile Views](https://komarev.com/ghpvc/?username=BlackIQ&style=flat-square&color=lightgrey)](https://github.com/BlackIQ)
 
 # [BlackIQ.ir](https://BlackIQ.ir)
 
