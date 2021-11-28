@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Mali:wght@300&display=swap");
+
+.main {
+  padding: 5%;
+  font-family: "Mali", cursive;
+  user-select: none;
+}
