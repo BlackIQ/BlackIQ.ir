@@ -1,7 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Mali:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap");
 
 .main {
   padding: 5%;
-  font-family: "Mali", cursive;
+  font-family: "Inter", sans-serif;
   user-select: none;
+}
+
+.info {
+  font-size: 15px;
+  float: right;
 }
